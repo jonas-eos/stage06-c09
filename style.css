@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* font size */
+  --fs-body: 1.6rem;
+  --fs-button-text: 1.4rem;
+  --fs-table-text: 2rem;
+
+  /* line height */
+  --lh-button-text: 2.4rem;
+  --lh-primary: var(var(--lh-primary));
+
+  /* Colors */
+  --bg-input-search: hsl(191, 65%, 7%);
+  --bg-search-button: hsl(191, 91%, 25%);
+  --bc-table: hsl(191, 31%, 42%);
+  --bg-table-head: hsl(191, 72%, 13%);
+  --bg-search-button-hover: hsl(0, 0%, 100%);
+
+
+
+  --c-search-placeholder: hsl(240, 6%, 51%);
+  --c-table-texts: hsl(240, 9%, 89%);
+  --c-search-button-hover: hsl(191, 91%, 25%);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--fs-body);
+}
+
+body {
+  font-size: var(--fs-body);
+  background-color: black;
+
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 112rem;
+  margin: 11rem auto;
+}
+
+header {
+  height: 4.8rem;
+  margin-bottom: 8.7rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  gap: .8rem;
+}
+
+.search input {
+  width: clamp(20rem, 40vw, 46rem);
+  height: 100%;
+  padding: 1.6rem;
+  border: none;
+
+  background-color: var(--bg-input-search);
+  border-radius: .5rem;
+  color: white;
+}
+
+.search input::placeholder {
+  color: var(--c-search-placeholder);
+}
+
+.search button {
+  width: 17rem;
+  height: 100%;
+  border-radius: .5rem;
+  padding: 1.2rem 3.2rem;
+  background-color: var(--bg-search-button);
+  text-transform: uppercase;
+
+  display: flex;
+  gap: .8rem;
+
+  font-size: var(--fs-button-text);
+  line-height: var(--lh-button-text);
+  font-weight: bold;
+  color: white;
+  fill: white;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: var(--bg-search-button-hover);
+  color: var(--c-search-button-hover);
+  fill: var(--c-search-button-hover);
+}
+
+table {
+  width: 100%;
+  max-height: 69rem;
+  border-top-right-radius: 1.2rem;
+  border-top-left-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+  border: 1px solid var(--bc-table);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table tbody {
+  display: block;
+  max-height: 68.8rem;
+  overflow-y: scroll;
+}
+
+table thead, table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table thead {
+  height: 6.4rem;
+  text-align: left;
+}
+
+table th {
+  font-weight: bold;
+  font-size: var(--fs-table-text);
+  line-height: var(--lh-primary);
+  color: var(--c-table-texts);
+  background-color: var(--bg-table-head);
+
+  padding: 1.6rem 2.4rem;
+  padding-left: 4rem;
+}
+
+.empty-table {
+  height: 64rem;
+  position: relative;
+}
+
+.empty-table-image {
+  position: absolute;
+  left: 28rem;
+  top: 21rem;
+}
+
+.empty-table-message {
+  font-size: 4rem;
+  color: hsl(189, 4%, 32%);
+  position: absolute;
+
+  left: calc(50% - 50.5rem/2 + 14.7rem);
+  top: calc(50% - 3rem/2 - 3.5rem);
+}
+
+.user {
+  min-width: 30rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+table tr:nth-child(even) {
+  background-color: hsl(192, 65%, 7%);
+}
+
+table tr:nth-child(odd) {
+  background-color: hsla(195, 61%, 6%, .5);
+}
+
+table td {
+  padding: 2.4rem;
+  padding-left: 4rem;
+}
+
+table td p {
+  color: var(--c-table-texts);
+  font-size: var(--fs-table-text);
+  line-height: var(var(--lh-primary));
+  font-weight: bold;
+}
+
+.user-icon img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.user-info a {
+  text-decoration: none;
+  font-size: var(--fs-table-text);
+  line-height: var(var(--lh-primary));
+  color: var(--c-table-texts);
+}
+
+.remove button {
+  color: hsl(355, 91%, 66%);
+  text-decoration: none;
+  font-size: var(--fs-table-text);
+  line-height: var(var(--lh-primary));
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: .6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A808C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  height: 10px;
+}
